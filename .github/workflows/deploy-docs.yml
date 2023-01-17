@@ -1,35 +1,22 @@
-
-name: Deploy Docs
-
+name: CI Github Pages
 on:
   push:
     branches:
-      # make sure this is the branch you are using
       - main
-
 jobs:
-  deploy-gh-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout  ️ 
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
-
-
-      - name: Build Project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
+      - name: Install and Build
+        run: |
+          npm install
           npm run build
-          > dist/.nojekyll
 
-      - name: Deploy Project
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          # This is the branch where the docs are deployed to
-          token: ${{ secrets.GITHUB_TOKEN}}
           branch: gh-pages
           folder: dist
