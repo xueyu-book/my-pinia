@@ -1,4 +1,4 @@
-import{r as mr,o as sB,c as aB,a as st,b as cn}from"./index-57209840.js";/*!
+import{r as mr,o as sB,c as aB,a as st,b as cn}from"./index-6bedc52c.js";/*!
  * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
  * Released under MIT License
