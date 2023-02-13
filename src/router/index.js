@@ -14,6 +14,16 @@ const router = createRouter({
       name: "calendarCanvas",
       component: () => import("@/views/CalendarCanvas.vue"),
     },
+    {
+      path: "/webrtc",
+      name: "webRTCIndex",
+      component: () => import("@/views/webrtc/index.vue"),
+    },
+    {
+      path: "/webrtc/getUserMedia",
+      name: "webRTCGetUserMedia",
+      component: () => import("@/views/webrtc/getUserMedia.vue"),
+    },
   ],
 });
 
